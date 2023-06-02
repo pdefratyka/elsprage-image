@@ -1,0 +1,29 @@
+{
+  "type": "record",
+  "name": "WordModificationEvent",
+  "namespace": "com.elsprage.external.words.avro",
+  "fields": [
+    {
+      "name": "wordId",
+      "type": "long"
+    },
+    {
+      "name": "audioFile",
+      "type": ["null", "bytes"],
+      "default":null
+    },
+    {
+      "name": "imageFile",
+      "type": ["null", "bytes"],
+      "default":null
+    },
+    {
+        "name":"actionType",
+        "type": {
+          "type": "enum",
+          "name": "WordModificationActionType",
+          "symbols": ["AUDIO_UPDATE", "IMAGE_UPDATE", "UNKNOWN"]
+        }
+    }
+  ]
+}
